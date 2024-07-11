@@ -176,13 +176,7 @@ layout: default
 <script id="tableGuts" type="text/EJS">
     <% $.each(people, function(i, info){ %>
         <tr>
-            <td>
-                <% if (info.person.photoUrl) { %>
-                    <img class="img-rounded headshot" src="<%= info.person.photoUrl %>" alt="<%= info.person.name %>" title="<%= info.person.name %>" />
-                <% } else { %>
-                    <img class="img-rounded headshot" src="/images/blank-person.jpg" alt="<%= info.person.name %>" title="<%= info.person.name %>" />
-                <% } %>
-            </td>
+            
             <td>
                 <%= info.person.name %> <%= formatParty(info.person.party) %>
                 <span class='visible-xs-block visible-sm-block'><%= info.office.name %></span>
