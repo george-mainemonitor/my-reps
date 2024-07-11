@@ -1,10 +1,10 @@
 port:  5000
 markdown: kramdown
-name: "My Reps"
+name: 
 url: http://findmyreps.datamade.us
 encoding: utf-8
 timezone: America/Chicago
-description: "Enter your address to find and contact your federal, state, county and local elected representatives"
+description: 
 gems:
   - jekyll-redirect-from
 google_api_key: AIzaSyBlYSeJ85rkjyaMgy0Fju6Wrii7mJXanog
