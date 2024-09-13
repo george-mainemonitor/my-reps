@@ -343,30 +343,14 @@ layout: default
   //]]>
 </script>
 
-<script type="text/javascript">
-function sendHeight()
-{
-    if(parent.postMessage)
-    {
-        // replace #wrapper with element that contains
-        // actual page content
-        var height= document.getElementById('wrapper').offsetHeight;
-        parent.postMessage(height, '*');
-    }
+<script>
+function resize_parent_frame() {
+let data = {"frame_id":"example_frame"};
+data.height = document.body.offsetHeight;
+if (window.self !== window.top) {
+parent.postMessage(data, 'https://mcpirstaging.wpenginepowered.com');
 }
-
-// Create browser compatible event handler.
-var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-var eventer = window[eventMethod];
-var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
-
-// Listen for a message from the iframe.
-eventer(messageEvent, function(e) {
-
-    if (isNaN(e.data)) return;
-
-    sendHeight();
-
-},
-false);
+}
+window.addEventListener('DOMContentLoaded', resize_parent_frame);
+window.addEventListener('resize', resize_parent_frame);
 </script>
