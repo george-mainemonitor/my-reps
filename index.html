@@ -343,14 +343,4 @@ layout: default
   //]]>
 </script>
 
-<script>
-function resize_parent_frame() {
-let data = {"frame_id":"example_frame"};
-data.height = document.body.offsetHeight;
-if (window.self !== window.top) {
-parent.postMessage(data, 'https://mcpirstaging.wpenginepowered.com');
-}
-}
-window.addEventListener('DOMContentLoaded', resize_parent_frame);
-window.addEventListener('resize', resize_parent_frame);
-</script>
+<script src="https://mcpirstaging.wpenginepowered.com/resize-iframe.js"></script>
